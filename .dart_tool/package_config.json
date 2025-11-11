@@ -8,6 +8,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "applovin_max",
+      "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/applovin_max-4.5.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "archive",
       "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/archive-4.0.7",
       "packageUri": "lib/",
@@ -300,6 +306,12 @@
       "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/get-4.7.2",
       "packageUri": "lib/",
       "languageVersion": "2.15"
+    },
+    {
+      "name": "google_mobile_ads",
+      "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/google_mobile_ads-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.6"
     },
     {
       "name": "http",

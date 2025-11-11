@@ -8,6 +8,7 @@
       "version": "1.0.0+1",
       "dependencies": [
         "app_tracking_transparency",
+        "applovin_max",
         "cached_network_image",
         "connectivity_plus",
         "cupertino_icons",
@@ -19,6 +20,7 @@
         "flutter_secure_storage",
         "flutter_slidable",
         "get",
+        "google_mobile_ads",
         "image_picker",
         "intl",
         "media_kit",
@@ -64,6 +66,25 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "google_mobile_ads",
+      "version": "6.0.0",
+      "dependencies": [
+        "flutter",
+        "meta",
+        "webview_flutter",
+        "webview_flutter_android",
+        "webview_flutter_wkwebview"
+      ]
+    },
+    {
+      "name": "applovin_max",
+      "version": "4.5.2",
+      "dependencies": [
+        "flutter",
+        "plugin_platform_interface"
       ]
     },
     {
@@ -467,6 +488,32 @@
       ]
     },
     {
+      "name": "webview_flutter_wkwebview",
+      "version": "3.23.0",
+      "dependencies": [
+        "flutter",
+        "meta",
+        "path",
+        "webview_flutter_platform_interface"
+      ]
+    },
+    {
+      "name": "webview_flutter_android",
+      "version": "4.10.1",
+      "dependencies": [
+        "flutter",
+        "meta",
+        "webview_flutter_platform_interface"
+      ]
+    },
+    {
+      "name": "plugin_platform_interface",
+      "version": "2.1.8",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
       "name": "dbus",
       "version": "0.7.11",
       "dependencies": [
@@ -500,13 +547,6 @@
       "name": "ffi",
       "version": "2.1.4",
       "dependencies": []
-    },
-    {
-      "name": "plugin_platform_interface",
-      "version": "2.1.8",
-      "dependencies": [
-        "meta"
-      ]
     },
     {
       "name": "flutter_plugin_android_lifecycle",
@@ -914,31 +954,12 @@
       ]
     },
     {
-      "name": "webview_flutter_wkwebview",
-      "version": "3.23.0",
-      "dependencies": [
-        "flutter",
-        "meta",
-        "path",
-        "webview_flutter_platform_interface"
-      ]
-    },
-    {
       "name": "webview_flutter_platform_interface",
       "version": "2.14.0",
       "dependencies": [
         "flutter",
         "meta",
         "plugin_platform_interface"
-      ]
-    },
-    {
-      "name": "webview_flutter_android",
-      "version": "4.10.1",
-      "dependencies": [
-        "flutter",
-        "meta",
-        "webview_flutter_platform_interface"
       ]
     },
     {

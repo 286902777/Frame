@@ -15,7 +15,6 @@ import 'CusToast.dart';
 
 class VideoManager {
   static final VideoManager instance = VideoManager();
-
   Future<Duration> countVideoDuration(String path) async {
     final player = Player();
     bool isCompleted = false;
@@ -75,7 +74,7 @@ class VideoManager {
     ImagePicker picker = ImagePicker();
     if (photo) {
       var video = await picker.pickVideo(source: ImageSource.gallery);
-      if (video != null) {
+      if (video != null && video.path.isNotEmpty) {
         var imageThumb = await getThumbnail(video.path);
         var size = await countVideoSize(video.path);
         var total = await countVideoDuration(video.path);

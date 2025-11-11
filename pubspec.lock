@@ -9,6 +9,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.6+1"
+  applovin_max:
+    dependency: "direct main"
+    description:
+      name: applovin_max
+      sha256: "159b403928d6342e85d988bc8f0ea4afb52dee2791376854daddd7d4444ba833"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "4.5.2"
   archive:
     dependency: transitive
     description:
@@ -392,6 +400,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.7.2"
+  google_mobile_ads:
+    dependency: "direct main"
+    description:
+      name: google_mobile_ads
+      sha256: a4f59019f2c32769fb6c60ed8aa321e9c21a36297e2c4f23452b3e779a3e7a26
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "6.0.0"
   http:
     dependency: transitive
     description:

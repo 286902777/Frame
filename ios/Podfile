@@ -34,6 +34,30 @@ target 'Runner' do
   target 'RunnerTests' do
     inherit! :search_paths
   end
+  pod 'GoogleMobileAdsMediationInMobi'
+  pod 'GoogleMobileAdsMediationIronSource'
+  pod 'GoogleMobileAdsMediationFyber'
+  pod 'GoogleMobileAdsMediationAppLovin'
+  pod 'GoogleMobileAdsMediationUnity'
+  pod 'GoogleMobileAdsMediationFacebook'
+  pod 'GoogleMobileAdsMediationPangle'
+  pod 'GoogleMobileAdsMediationMintegral'
+  pod 'GoogleMobileAdsMediationVungle'
+  pod 'GoogleMobileAdsMediationMaio'
+   
+  pod 'AppLovinMediationFacebookAdapter'
+  pod 'AppLovinMediationMintegralAdapter'
+  pod 'AppLovinMediationBidMachineAdapter'
+  pod 'AppLovinMediationVungleAdapter'
+  pod 'AppLovinMediationGoogleAdapter'
+  pod 'AppLovinMediationBigoAdsAdapter'
+  pod 'AppLovinMediationFyberAdapter'
+  pod 'AppLovinMediationMolocoAdapter'
+  pod 'AppLovinMediationByteDanceAdapter'
+  pod 'AppLovinMediationGoogleAdManagerAdapter'
+  pod 'AppLovinMediationInMobiAdapter'
+  pod 'AppLovinMediationUnityAdsAdapter'
+  pod 'AppLovinMediationIronSourceAdapter'
 end
 
 post_install do |installer|
