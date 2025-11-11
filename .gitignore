@@ -1,0 +1,15 @@
+# CocoaPods
+Pods/
+!Podfile.lock
+
+# Carthage
+Carthage/Build
+
+# Swift Package Manager
+.swiftpm
+.build/
+
+# 其他 iOS 相关忽略
+*.xcworkspace
+xcuserdata/
+DerivedData/
