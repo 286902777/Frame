@@ -114,8 +114,8 @@ class _UploadPageState extends State<UploadPage>
                         SizedBox(height: 20),
                         Text(
                           index == 0
-                              ? 'Upload local files after authorization'
-                              : 'Import from system files',
+                              ? 'Authorize first, then upload local files.'
+                              : 'Import from system folders.',
                           style: const TextStyle(
                             letterSpacing: -0.5,
                             fontSize: 14,
