@@ -547,6 +547,7 @@ class _PlayPageState extends State<PlayPage>
   }
 
   void _openListEvent() {
+    displayTool(true);
     if (isFullScreen) {
       showDialog(
         context: context,
@@ -597,6 +598,7 @@ class _PlayPageState extends State<PlayPage>
   }
 
   void _goNextEvent(bool isAuto) {
+    displayTool(true);
     sliderValue.value = 0;
     start.value = Duration(milliseconds: 0);
     autoClick = isAuto;
@@ -740,7 +742,11 @@ class _PlayPageState extends State<PlayPage>
                   // } else {
                   //   Get.back();
                   // }
-                  Get.back();
+                  if (isFullScreen) {
+                    _screenChange();
+                  } else {
+                    Get.back();
+                  }
                 },
               ),
               SizedBox(width: 8),
@@ -872,6 +878,7 @@ class _PlayPageState extends State<PlayPage>
                 sizeStyle: CupertinoButtonSize.small,
                 child: Image.asset(Assets.assetsPlayScreen, width: 32),
                 onPressed: () {
+                  displayTool(true);
                   _screenChange();
                 },
               ),
@@ -920,6 +927,7 @@ class _PlayPageState extends State<PlayPage>
   }
 
   void _playClick() async {
+    displayTool(true);
     if (isPlay.value) {
       isUsePause = true;
       await player.pause();
@@ -1622,10 +1630,9 @@ class _PlayPageState extends State<PlayPage>
   );
 
   void displayTool(bool forever) {
-    if (forever == true) {
-      return;
+    if (forever == false) {
+      isShowTool.value = !isShowTool.value;
     }
-    isShowTool.value = !isShowTool.value;
     if (isShowTool.value) {
       _toolTimer?.cancel();
       _toolTimer = Timer(Duration(seconds: 5), () {
