@@ -173,7 +173,7 @@ class _SetPageState extends State<SetPage>
         openEmail();
       // MobileAds.instance.openAdInspector((error) {});
       case 1:
-        Get.to(() => (WebPage(name: '', link: 'https://frame.com/terms/')));
+        Get.to(() => (WebPage(name: '', link: 'https://www.baidu.com/')));
       default:
         Get.to(() => (WebPage(name: '', link: 'https://frame.com/privacy/')));
     }
