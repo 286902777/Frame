@@ -102,15 +102,27 @@ class _HistoryPageState extends State<HistoryPage> {
           width: Get.width,
           height: 44,
           padding: EdgeInsets.fromLTRB(12, 10, 12, 10),
-          child: Text(
-            'Record',
-            style: const TextStyle(
-              letterSpacing: -0.5,
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-              color: Color(0xFF17132C),
-            ),
-            textAlign: TextAlign.start,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 0,
+                bottom: 0,
+                child: Image.asset(Assets.assetsTitleBg, width: 40, height: 14),
+              ),
+              Positioned(
+                left: 0,
+                child: Text(
+                  'History',
+                  style: const TextStyle(
+                    letterSpacing: -0.5,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF17132C),
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+              ),
+            ],
           ),
         ),
         Flexible(
