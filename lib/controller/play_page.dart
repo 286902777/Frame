@@ -96,7 +96,7 @@ class _PlayPageState extends State<PlayPage>
     }
   }
 
-  void _addConfigTimer(DragEvent type) {
+  void _appendConfigTimer(DragEvent type) {
     _disTimer?.cancel();
     _disTimer = Timer(Duration(seconds: 2), () {
       switch (type) {
@@ -537,7 +537,7 @@ class _PlayPageState extends State<PlayPage>
               children: [
                 Center(child: Video(controller: controller)),
                 _videoControl(),
-                _addSpeedWidget(),
+                _appendSpeedWidget(),
               ],
             ),
           ),
@@ -662,7 +662,7 @@ class _PlayPageState extends State<PlayPage>
                         _changePlayValueTo(start.value - Duration(seconds: 10));
                         _forwardEvent.reverse();
                         _backEvent.forward();
-                        _addConfigTimer(DragEvent.left);
+                        _appendConfigTimer(DragEvent.left);
                       }
                     } else {
                       if ((start.value + Duration(seconds: 10)) <=
@@ -670,7 +670,7 @@ class _PlayPageState extends State<PlayPage>
                         _changePlayValueTo(start.value + Duration(seconds: 10));
                         _backEvent.reverse();
                         _forwardEvent.forward();
-                        _addConfigTimer(DragEvent.right);
+                        _appendConfigTimer(DragEvent.right);
                       }
                     }
                   },
@@ -697,8 +697,8 @@ class _PlayPageState extends State<PlayPage>
             ),
 
             ///几个操作提示器
-            _addBrightView(),
-            _addVolumeView(),
+            _appendBrightView(),
+            _appendVolumeView(),
             _backTenView(),
             _forwardTenView(),
             _displayDetailTimeView(),
@@ -838,7 +838,7 @@ class _PlayPageState extends State<PlayPage>
                 () => CupertinoButton(
                   padding: EdgeInsets.zero,
                   sizeStyle: CupertinoButtonSize.small,
-                  onPressed: isAutoLoadShow ? null : _playClick,
+                  onPressed: isAutoLoadShow ? null : _clickPlayAction,
                   child: Image.asset(
                     isPlay.value ? Assets.assetsPlay : Assets.assetsPause,
                     width: 32,
@@ -926,7 +926,7 @@ class _PlayPageState extends State<PlayPage>
     );
   }
 
-  void _playClick() async {
+  void _clickPlayAction() async {
     displayTool(true);
     if (isPlay.value) {
       isUsePause = true;
@@ -978,7 +978,7 @@ class _PlayPageState extends State<PlayPage>
               if (newVideoSuccess == false) {
                 return;
               }
-              displayTool(false);
+              displayTool(true);
               isDragging = false;
               sliderValue.value = value;
               if (newVideoSuccess) {
@@ -986,7 +986,7 @@ class _PlayPageState extends State<PlayPage>
                 movedTime.value = total.value * value;
                 _changePlayValueTo(total.value * value);
                 _progressPromptEvent.forward();
-                _addConfigTimer(DragEvent.drag);
+                _appendConfigTimer(DragEvent.drag);
                 if (isLoadShow.value == false) {
                   isLoadShow.value = true;
                 }
@@ -1008,7 +1008,7 @@ class _PlayPageState extends State<PlayPage>
     }
   }
 
-  Widget _addBrightView() {
+  Widget _appendBrightView() {
     return Positioned(
       left: 0,
       right: 0,
@@ -1057,7 +1057,7 @@ class _PlayPageState extends State<PlayPage>
     );
   }
 
-  Widget _addVolumeView() {
+  Widget _appendVolumeView() {
     return Positioned(
       left: 0,
       right: 0,
@@ -1211,8 +1211,8 @@ class _PlayPageState extends State<PlayPage>
               height: 72,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: Color(0xFF0D412B),
-                borderRadius: BorderRadius.circular(12),
+                color: Color(0xFF508BE1),
+                borderRadius: BorderRadius.circular(16),
               ),
               child: Obx(
                 () => Column(
@@ -1248,7 +1248,7 @@ class _PlayPageState extends State<PlayPage>
     );
   }
 
-  Widget _addSpeedWidget() {
+  Widget _appendSpeedWidget() {
     return Container();
     // return Obx(
     //   () => Visibility(
