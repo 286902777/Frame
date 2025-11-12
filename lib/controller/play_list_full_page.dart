@@ -246,6 +246,15 @@ class _PlayListFullPageState extends State<PlayListFullPage> {
                     child: Stack(
                       children: [
                         Positioned(
+                          left: 20,
+                          bottom: 16,
+                          child: Image.asset(
+                            Assets.assetsTitleBg,
+                            width: 40,
+                            height: 14,
+                          ),
+                        ),
+                        Positioned(
                           top: 20,
                           left: 20,
                           child: Text(
