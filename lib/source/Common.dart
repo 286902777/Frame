@@ -3,8 +3,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 
 enum PlatformType {
-  india('werwr'),
-  east('wersxs');
+  india('kidskin'),  //cashsnap
+  east('triformous'); //quickearn
 
   final String name;
   const PlatformType(this.name);
@@ -49,7 +49,7 @@ PlaySource playSource = PlaySource.landpage_hot;
 
 String AppName = 'Frame';
 
-String appBunldeId = 'com.frame.xsdfa';
+String appBunldeId = 'com.frame.lumistream';
 
 bool isFullScreen = false;
 
