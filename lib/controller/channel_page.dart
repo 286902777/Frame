@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 import 'package:osmovie/source/AppDataManager.dart';
 import 'package:osmovie/view/index_cell.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import '../event/event_manager.dart';
 import '../event/http_manager.dart';
 import '../generated/assets.dart';
 import '../model/indexModel.dart';
@@ -75,7 +76,7 @@ class _ChannelPageState extends State<ChannelPage>
     // TODO: implement initState
     super.initState();
     eventSource = BackEventSource.channelPage;
-    eventAdsSource = AdsSource.channelpage;
+    eventAdsSource = AdmobSource.channelpage;
     EventManager.instance.enventUpload(EventApi.channelpageExpose, {
       'GSjzKapRnA': channelSource.name,
     });
@@ -180,12 +181,11 @@ class _ChannelPageState extends State<ChannelPage>
         ApiKey.home,
         widget.platform,
         para: {
-          'tantalate': page,
-          'cusecs': 20,
-          'cyclitic': widget.userId,
-          'earthboard': '',
-          'tautnesses': '',
-          'cedarware': 'v2',
+          'nitering': page,
+          'prereport': pageSize,
+          'watchfire': widget.userId,
+          'typewrite': {'alevin': ''},
+          'pterylosis': 'v2',
         },
         successHandle: (data) async {
           if (data != null) {
@@ -338,12 +338,11 @@ class _ChannelPageState extends State<ChannelPage>
       widget.platform,
       randomPage > 1,
       para: {
-        'tantalate': page,
-        'cusecs': pageSize,
-        'cyclitic': randomUserId,
-        'earthboard': '',
-        'tautnesses': '',
-        'cedarware': 'v2',
+        'nitering': page,
+        'prereport': pageSize,
+        'watchfire': randomUserId,
+        'typewrite': {'alevin': ''},
+        'pterylosis': 'v2',
       },
       successHandle: (data) {
         EasyLoading.dismiss();
@@ -453,7 +452,7 @@ class _ChannelPageState extends State<ChannelPage>
               Get.back();
             },
             padding: EdgeInsets.zero,
-            child: Image.asset(Assets.assetsBack, width: 24),
+            child: Image.asset(Assets.assetsChannelBack, width: 24),
           ),
         ],
       ),
@@ -489,7 +488,7 @@ class _ChannelPageState extends State<ChannelPage>
                   child: Container(
                     alignment: Alignment.center,
                     child: Image.asset(
-                      Assets.homeAvatarIcon,
+                      Assets.assetsChannelVatar,
                       width: 66,
                       height: 66,
                       fit: BoxFit.cover,
@@ -576,7 +575,7 @@ class _ChannelPageState extends State<ChannelPage>
                             decoration: BoxDecoration(
                               image: selectIndex.value == index
                                   ? DecorationImage(
-                                      image: AssetImage(Assets.homeSegBg),
+                                      image: AssetImage(Assets.assetsSegBg),
                                       fit: BoxFit.cover,
                                     )
                                   : null,
@@ -697,7 +696,7 @@ class _ChannelPageState extends State<ChannelPage>
               ),
             ),
             SizedBox(width: 4),
-            Image.asset(Assets.homeAvaterArrow, width: 12, height: 12),
+            Image.asset(Assets.assetsArrow, width: 12, height: 12),
           ],
         ),
       ),

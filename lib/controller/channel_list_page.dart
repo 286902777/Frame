@@ -216,13 +216,13 @@ class _ChannelListPageState extends State<ChannelListPage> {
                             width: 54,
                             height: 54,
                             placeholder: (context, url) => Image.asset(
-                              Assets.homeAvatarBg,
+                              Assets.assetsAvatar,
                               width: 54,
                               height: 54,
                               fit: BoxFit.cover,
                             ),
                             errorWidget: (context, url, error) => Image.asset(
-                              Assets.homeAvatarBg,
+                              Assets.assetsAvatar,
                               width: 54,
                               height: 54,
                               fit: BoxFit.cover,
@@ -274,7 +274,9 @@ class _ChannelListPageState extends State<ChannelListPage> {
                       ),
                       SizedBox(width: 4),
                       Image.asset(
-                        show.value ? Assets.homeCloseAll : Assets.homeSeeAll,
+                        show.value
+                            ? Assets.assetsChannelClose
+                            : Assets.assetsChannelExpand,
                         width: 16,
                         height: 16,
                       ),
@@ -319,13 +321,13 @@ class _ChannelListPageState extends State<ChannelListPage> {
                     width: 54,
                     height: 54,
                     placeholder: (context, url) => Image.asset(
-                      Assets.homeAvatarBg,
+                      Assets.assetsAvatar,
                       width: 54,
                       height: 54,
                       fit: BoxFit.cover,
                     ),
                     errorWidget: (context, url, error) => Image.asset(
-                      Assets.homeAvatarBg,
+                      Assets.assetsAvatar,
                       width: 54,
                       height: 54,
                       fit: BoxFit.cover,

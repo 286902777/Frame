@@ -79,6 +79,7 @@ String appLinkId = '';
 String AppName = 'Frame';
 String appBunldeId = 'com.frame.xsdfa';
 bool isFullScreen = false;
+bool isDeepComment = false;
 String playFileId = '';
 
 Function(int index)? clickTabItem;

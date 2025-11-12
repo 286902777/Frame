@@ -131,12 +131,11 @@ class _DeepPageState extends State<DeepPage>
         ApiKey.home,
         apiPlatform,
         para: {
-          'tantalate': page,
-          'cusecs': pageSize,
-          'cyclitic': '',
-          'earthboard': '',
-          'tautnesses': {'uncaustic': widget.linkId},
-          'cedarware': 'v2',
+          'nitering': page,
+          'prereport': pageSize,
+          'watchfire': '',
+          'typewrite': {'alevin': widget.linkId},
+          'pterylosis': 'v2',
         },
         successHandle: (data) async {
           if (data != null) {
@@ -175,11 +174,11 @@ class _DeepPageState extends State<DeepPage>
             }
           }
           bool isFirst = await AppKey.getBool(AppKey.isFirstLink) ?? false;
-          EventManager.instance.enventUpload(EventApi.landpageExpose, {
-            'KsAj': apiPlatform == PlatformType.india ? 'JiAYLbh' : 'YKozeiMhE',
-            'FYYS': isDeepLink ? 'yZLK' : 'ndwTflNXN',
-            'pDTFjZl': !isFirst,
-          });
+          // EventManager.instance.enventUpload(EventApi.landpageExpose, {
+          //   'KsAj': apiPlatform == PlatformType.india ? 'JiAYLbh' : 'YKozeiMhE',
+          //   'FYYS': isDeepLink ? 'yZLK' : 'ndwTflNXN',
+          //   'pDTFjZl': !isFirst,
+          // });
           _refreshController.loadComplete();
         },
         failHandle: (refresh, code, msg) {
@@ -304,18 +303,16 @@ class _DeepPageState extends State<DeepPage>
   }
 
   Future requestRecommendData() async {
-    // uid: spasmodist channel_id:// varanger  link_id:// /pm57gqcgxs/norselled  version:// gangways
     await HttpManager.recommendPostRequest(
       ApiKey.home,
       apiPlatform,
       randomPage > 1,
       para: {
-        'tantalate': randomPage,
-        'cusecs': pageSize,
-        'cyclitic': randomUserId,
-        'earthboard': '',
-        'tautnesses': '',
-        'cedarware': 'v2',
+        'nitering': randomPage,
+        'prereport': pageSize,
+        'watchfire': randomUserId,
+        'typewrite': {'alevin': ''},
+        'pterylosis': 'v2',
       },
       successHandle: (data) {
         EasyLoading.dismiss();
@@ -453,12 +450,12 @@ class _DeepPageState extends State<DeepPage>
                           width: 28,
                           height: 28,
                           placeholder: (context, url) => Image.asset(
-                            Assets.homeAvatarIcon,
+                            Assets.assetsAvatar,
                             width: 28,
                             height: 28,
                           ),
                           errorWidget: (context, url, error) => Image.asset(
-                            Assets.homeAvatarIcon,
+                            Assets.assetsAvatar,
                             width: 28,
                             height: 28,
                           ),
@@ -477,11 +474,7 @@ class _DeepPageState extends State<DeepPage>
                         ),
                       ),
                       SizedBox(width: 4),
-                      Image.asset(
-                        Assets.homeAvaterArrow,
-                        width: 16,
-                        height: 16,
-                      ),
+                      Image.asset(Assets.assetsArrow, width: 16, height: 16),
                     ],
                   ),
                 ),
@@ -547,13 +540,13 @@ class _DeepPageState extends State<DeepPage>
                         width: 48 - 24 * rate,
                         height: 48 - 24 * rate,
                         placeholder: (context, url) => Image.asset(
-                          Assets.homeAvatarIcon,
+                          Assets.assetsAvatar,
                           width: 48 - 24 * rate,
                           height: 48 - 24 * rate,
                         ),
 
                         errorWidget: (context, url, error) => Image.asset(
-                          Assets.homeAvatarIcon,
+                          Assets.assetsAvatar,
                           width: 48 - 24 * rate,
                           height: 48 - 24 * rate,
                         ),
@@ -572,7 +565,7 @@ class _DeepPageState extends State<DeepPage>
                         maxLines: 1,
                       ),
                     ),
-                    Image.asset(Assets.homeAvaterArrow, width: 16, height: 16),
+                    Image.asset(Assets.assetsArrow, width: 16, height: 16),
                   ],
                 ),
               ),
@@ -632,7 +625,7 @@ class _DeepPageState extends State<DeepPage>
                             decoration: BoxDecoration(
                               image: selectIndex.value == index
                                   ? DecorationImage(
-                                      image: AssetImage(Assets.homeSegBg),
+                                      image: AssetImage(Assets.assetsSegBg),
                                       fit: BoxFit.cover,
                                     )
                                   : null,
@@ -750,7 +743,7 @@ class _DeepPageState extends State<DeepPage>
               ),
             ),
             SizedBox(width: 4),
-            Image.asset(Assets.homeArrow, width: 12, height: 12),
+            Image.asset(Assets.assetsArrow, width: 12, height: 12),
           ],
         ),
       ),
