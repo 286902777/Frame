@@ -26,19 +26,19 @@ class IndexModel {
 
   factory IndexModel.fromJson(Map<String, dynamic> json) => IndexModel(
     files: List<IndexListModel>.from(
-      json["evanesces"] != null
-          ? json["evanesces"].map((x) => IndexListModel.fromJson(x))
+      json["submerge"] != null
+          ? json["submerge"].map((x) => IndexListModel.fromJson(x))
           : [],
     ),
-    user: json["nutates"] != null ? User.fromJson(json["nutates"]) : null,
+    user: json["portlily"] != null ? User.fromJson(json["portlily"]) : null,
     top: List<IndexListModel>.from(
-      json["sobriquet"] != null
-          ? json["sobriquet"].map((x) => IndexListModel.fromJson(x))
+      json["chalcidic"] != null
+          ? json["chalcidic"].map((x) => IndexListModel.fromJson(x))
           : [],
     ),
     recent: List<IndexListModel>.from(
-      json["mannosan"] != null
-          ? json["mannosan"].map((x) => IndexListModel.fromJson(x))
+      json["bagobo"] != null
+          ? json["bagobo"].map((x) => IndexListModel.fromJson(x))
           : [],
     ),
   );
@@ -72,17 +72,17 @@ class IndexListModel {
   });
 
   factory IndexListModel.fromJson(Map<String, dynamic> json) => IndexListModel(
-    id: json["auntie"] ?? '',
-    updateTime: json["rhaphae"] ?? 0,
-    finished: json["berserks"] ?? false,
-    fileMeta: FileMeta.fromJson(json["broigne"]),
-    namespace: Namespace.fromJson(json["dignify"]),
-    createTime: json["sitars"] ?? 0,
-    disPlayName: DisPlayName.fromJson(json["grippingly"]), //grippingly/azotemia
-    invalid: json["datto"] ?? false,
-    directory: json["quietness"] ?? false,
-    video: json["adstrict"] ?? false,
-    vidQty: json["micks"] ?? 0,
+    id: json["apojove"] ?? '',
+    finished: json["foreshow"] ?? false,
+    updateTime: json["bespout"] ?? 0,
+    fileMeta: FileMeta.fromJson(json["choyaroot"]),
+    namespace: Namespace.fromJson(json["5uuu1au8wp"]),
+    createTime: json["harems"] ?? 0,
+    disPlayName: DisPlayName.fromJson(json["paramarine"]), //grippingly/azotemia
+    invalid: json["unascribed"] ?? false,
+    directory: json["vxz_38but7"] ?? false,
+    video: json["klong"] ?? false,
+    vidQty: json["overbade"] ?? 0,
   );
 
   Map<String, dynamic> toJson() => {
@@ -114,11 +114,11 @@ class FileMeta {
   });
 
   factory FileMeta.fromJson(Map<String, dynamic> json) => FileMeta(
-    type: json["talkworthy"] ?? '',
-    size: json["epiphyseal"] ?? 0,
-    thumbnail: json["dozener"] ?? '',
-    mimeType: json["missy"] ?? '',
-    extension: json["discinct"] ?? '',
+    type: json["hq69c3xeuq"] ?? '',
+    size: json["celioscope"] ?? 0,
+    thumbnail: json["luceres"] ?? '',
+    mimeType: json["qofjuhze7c"] ?? '',
+    extension: json["wwbn1gqofp"] ?? '',
   );
 
   Map<String, dynamic> toJson() => {
@@ -131,53 +131,53 @@ class FileMeta {
 }
 
 class DisPlayName {
-  String azotemia;
-  DisPlayName({required this.azotemia});
+  String carrow;
+  DisPlayName({required this.carrow});
 
   factory DisPlayName.fromJson(Map<String, dynamic> json) =>
-      DisPlayName(azotemia: json["azotemia"] ?? '');
+      DisPlayName(carrow: json["carrow"] ?? '');
 
-  Map<String, dynamic> toJson() => {"azotemia": azotemia};
+  Map<String, dynamic> toJson() => {"carrow": carrow};
 }
 
 class Namespace {
-  Reindebted reindebted;
-  Namespace({required this.reindebted});
+  NoModel no;
+  Namespace({required this.no});
   // dignify/reindebted/aromacity
   factory Namespace.fromJson(Map<String, dynamic> json) =>
-      Namespace(reindebted: Reindebted.fromJson(json["reindebted"]));
+      Namespace(no: NoModel.fromJson(json["no"]));
 
-  Map<String, dynamic> toJson() => {"reindebted": reindebted.toJson()};
+  Map<String, dynamic> toJson() => {"no": no.toJson()};
 }
 
-class Reindebted {
-  Aromacity aromacity;
-  Reindebted({required this.aromacity});
+class NoModel {
+  Homonid homonid;
+  NoModel({required this.homonid});
 
-  factory Reindebted.fromJson(Map<String, dynamic> json) =>
-      Reindebted(aromacity: Aromacity.fromJson(json["aromacity"]));
+  factory NoModel.fromJson(Map<String, dynamic> json) =>
+      NoModel(homonid: Homonid.fromJson(json["Homonid"]));
 
-  Map<String, dynamic> toJson() => {"aromacity": aromacity.toJson()};
+  Map<String, dynamic> toJson() => {"Homonid": homonid.toJson()};
 }
 
-class Aromacity {
+class Homonid {
   String id;
   String name;
   Tenant tenant;
   int createTime;
 
-  Aromacity({
+  Homonid({
     required this.id,
     required this.tenant,
     required this.createTime,
     required this.name,
   });
 
-  factory Aromacity.fromJson(Map<String, dynamic> json) => Aromacity(
-    id: json["auntie"] ?? '',
-    createTime: json["sitars"] ?? 0,
-    name: json["bistered"] ?? '',
-    tenant: Tenant.fromJson(json["mesotrons"]),
+  factory Homonid.fromJson(Map<String, dynamic> json) => Homonid(
+    id: json["apojove"] ?? '',
+    createTime: json["harems"] ?? 0,
+    name: json["binous"] ?? '',
+    tenant: Tenant.fromJson(json["cowcatcher"]),
   );
 
   Map<String, dynamic> toJson() => {
@@ -204,11 +204,11 @@ class Tenant {
   });
 
   factory Tenant.fromJson(Map<String, dynamic> json) => Tenant(
-    id: json["auntie"] ?? '',
-    createTime: json["sitars"] ?? 0,
-    accessExpiredTime: json["meathead"] ?? 0,
-    name: json["bistered"] ?? '',
-    accessId: json["reebok"] ?? '',
+    id: json["apojove"] ?? '',
+    createTime: json["harems"] ?? 0,
+    accessExpiredTime: json["reddy"] ?? 0,
+    name: json["binous"] ?? '',
+    accessId: json["repps"] ?? '',
   );
 
   Map<String, dynamic> toJson() => {
@@ -228,7 +228,6 @@ class User {
   String picture;
   String telegramUrl;
   String bannerPictureUrl;
-  String nruSource;
   String telegramAddress;
   List<Label> labels;
 
@@ -240,23 +239,21 @@ class User {
     required this.picture,
     required this.telegramUrl,
     required this.bannerPictureUrl,
-    required this.nruSource,
     required this.telegramAddress,
     required this.labels,
   });
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-    id: json["auntie"] ?? '',
-    account: json["leftover"] ?? '',
-    name: json["bistered"] ?? '',
+    id: json["apojove"] ?? '',
+    account: json["parolable"] ?? '',
+    name: json["binous"] ?? '',
 
-    telegramUrl: json["stockage"] ?? '',
-    bannerPictureUrl: json["poetastric"] ?? '',
-    labels: List<Label>.from(json["sunstrokes"].map((x) => Label.fromJson(x))),
-    nruSource: json["guttulous"] ?? '',
-    telegramAddress: json["hellenists"] ?? '',
-    email: json["alerting"] ?? '',
-    picture: json["daitya"] ?? '',
+    telegramUrl: json["sirras"] ?? '',
+    bannerPictureUrl: json["unhumoured"] ?? '',
+    labels: List<Label>.from(json["miscalling"].map((x) => Label.fromJson(x))),
+    telegramAddress: json["schnapper"] ?? '',
+    email: json["befleck"] ?? '',
+    picture: json["orvietan"] ?? '',
   );
 
   Map<String, dynamic> toJson() => {
@@ -267,7 +264,6 @@ class User {
     "picture": picture,
     "labels": List<dynamic>.from(labels.map((x) => x.toJson())),
 
-    "nru_source": nruSource,
     "telegram_address": telegramAddress,
     "account": account,
     "name": name,
@@ -290,10 +286,10 @@ class Label {
   });
 
   factory Label.fromJson(Map<String, dynamic> json) => Label(
-    id: json["auntie"] ?? '',
-    firstLabelCode: json["evokers"] ?? '',
-    secondLabelCode: json["unaghast"] ?? '',
-    labelName: json["plurivalve"] ?? '',
+    id: json["apojove"] ?? '',
+    firstLabelCode: json["vxmen9fuhl"] ?? '',
+    secondLabelCode: json["octangle"] ?? '',
+    labelName: json["vias"] ?? '',
   );
 
   Map<String, dynamic> toJson() => {
@@ -316,7 +312,6 @@ class UserPools {
   List<UserLabel> labels;
   String telegramUrl;
   String bannerPictureUrl;
-  String nruSource;
   String telegramAddress;
 
   UserPools({
@@ -324,7 +319,6 @@ class UserPools {
     required this.account,
     required this.name,
     required this.bannerPictureUrl,
-    required this.nruSource,
     required this.telegramAddress,
     required this.email,
     required this.picture,
@@ -341,7 +335,6 @@ class UserPools {
     name: json["name"] ?? '',
     telegramUrl: json["telegramUrl"] ?? '',
     bannerPictureUrl: json["bannerPictureUrl"] ?? '',
-    nruSource: json["nruSource"] ?? '',
     telegramAddress: json["telegramAddress"] ?? '',
     email: json["email"] ?? '',
     picture: json["picture"] ?? '',
@@ -366,8 +359,6 @@ class UserPools {
     "labels": List<dynamic>.from(labels.map((x) => x.toJson())),
     "telegramUrl": telegramUrl,
     "bannerPictureUrl": bannerPictureUrl,
-    "nruSource": nruSource,
-
     "recommend": recommend,
   };
 }
