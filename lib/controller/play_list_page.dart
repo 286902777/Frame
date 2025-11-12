@@ -237,6 +237,15 @@ class _PlayListPageState extends State<PlayListPage> {
               child: Stack(
                 children: [
                   Positioned(
+                    left: 20,
+                    bottom: 16,
+                    child: Image.asset(
+                      Assets.assetsTitleBg,
+                      width: 40,
+                      height: 14,
+                    ),
+                  ),
+                  Positioned(
                     top: 20,
                     left: 20,
                     child: Text(
@@ -319,7 +328,7 @@ class _PlayListPageState extends State<PlayListPage> {
       child: Container(
         height: 78,
         width: Get.width,
-        color: model.isSelect ? Color(0xFFCDDEFB) : Colors.transparent,
+        color: model.isSelect ? Color(0xFFDCE9FF) : Colors.transparent,
         padding: EdgeInsets.only(left: 16, top: 8, right: 14, bottom: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
