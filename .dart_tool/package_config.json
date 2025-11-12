@@ -26,6 +26,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "asn1lib",
+      "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/asn1lib-1.6.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "async",
       "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/async-2.13.0",
       "packageUri": "lib/",
@@ -86,6 +92,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "convert",
+      "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/convert-3.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "cross_file",
       "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/cross_file-0.3.5",
       "packageUri": "lib/",
@@ -120,6 +132,12 @@
       "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/device_info_plus_platform_interface-7.0.3",
       "packageUri": "lib/",
       "languageVersion": "3.7"
+    },
+    {
+      "name": "encrypt",
+      "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/encrypt-5.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
     },
     {
       "name": "fake_async",
@@ -576,6 +594,12 @@
       "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/plugin_platform_interface-2.1.8",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "pointycastle",
+      "rootUri": "file:///Users/hf/.pub-cache/hosted/pub.flutter-io.cn/pointycastle-3.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
     },
     {
       "name": "posix",

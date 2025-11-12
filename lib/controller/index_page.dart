@@ -5,6 +5,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:osmovie/controller/channel_list_page.dart';
+import 'package:osmovie/controller/channel_page.dart';
+import 'package:osmovie/event/http_manager.dart';
 import 'package:osmovie/source/AppDataManager.dart';
 import '../event/event_manager.dart';
 import '../generated/assets.dart';
@@ -60,6 +63,7 @@ class _IndexPageState extends State<IndexPage>
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     Common.instance.initTracking();
     isNetwork.value = Common.instance.netStatus;
+    requsetChannelData();
   }
 
   @override
@@ -68,103 +72,102 @@ class _IndexPageState extends State<IndexPage>
     super.dispose();
   }
 
-  // Future<void> getlocationChannelData() async {
-  //   userLists.assignAll(AppdataManager.instance.users);
-  //   if (userLists.isNotEmpty) {
-  //     String userId = userLists.first.id;
-  //     int platform = userLists.first.platform;
-  //     List<UserPools> result = userLists
-  //         .where((user) => user.platform == platform)
-  //         .toList();
-  //     List<Map<String, dynamic>> labelArr = [];
-  //     result.forEach((mod) {
-  //       mod.labels.forEach((label) {
-  //         Map<String, dynamic> dic = {
-  //           'accept': label.id,
-  //           'introrse': label.labelName,
-  //           'prudishly': label.firstLabelCode,
-  //           'sulphitic': label.secondLabelCode,
-  //         };
-  //         labelArr.add(dic);
-  //       });
-  //     });
-  //     await ServiceClentManager.postRequest(
-  //       ApiKey.userPools,
-  //       platform == 0 ? PlatformType.first : PlatformType.end,
-  //       para: {
-  //         'chairs': {'sublates': labelArr},
-  //         'morrows': Platform.isIOS ? 'ios' : 'android',
-  //         'wasterful': userId,
-  //       },
-  //       successHandle: (data) {
-  //         if (data != null && data is List) {
-  //           List<UserPools> tempUser = <UserPools>[];
-  //           data.forEach((m) {
-  //             if (m is Map<String, dynamic>) {
-  //               UserPools pool = UserPools(
-  //                 id: m['wasterful'],
-  //                 account: '',
-  //                 name: m['narco'],
-  //                 email: '',
-  //                 picture: m['faintheart'],
-  //                 labels: [],
-  //                 telegramUrl: '',
-  //                 bannerPictureUrl: '',
-  //                 nruSource: '',
-  //                 telegramAddress: '',
-  //                 platform: platform,
-  //               );
-  //               tempUser.add(pool);
-  //             }
-  //           });
-  //           randomInsertChannelData(tempUser);
-  //         }
-  //       },
-  //       failHandle: (refresh, code, msg) {
-  //         if (refresh) {
-  //           getlocationChannelData();
-  //         }
-  //       },
-  //     );
-  //   }
-  // }
-  //
-  // void randomInsertChannelData(List<UserPools> list) async {
-  //   List<UserPools> tempList = <UserPools>[];
-  //   await AppDataBase.instance.loadUsers();
-  //   List<UserPools> users = AppDataBase.instance.users;
-  //
-  //   for (UserPools item in list) {
-  //     List<UserPools> exits = users.where((m) => m.id == item.id).toList();
-  //     if (exits.isEmpty) {
-  //       tempList.add(item);
-  //     }
-  //   }
-  //
-  //   if (tempList.isEmpty) {
-  //     return;
-  //   }
-  //
-  //   if (users.length > 2) {
-  //     for (int i = 0; i < users.length; i++) {
-  //       if (i % 2 == 0 && i > 0) {
-  //         int idx = Random().nextInt(tempList.length);
-  //         UserPools pool = tempList[idx];
-  //         pool.recommend = 1;
-  //         tempList.removeAt(idx);
-  //         userLists.insert(i, pool);
-  //       }
-  //     }
-  //   } else {
-  //     int idx = Random().nextInt(tempList.length);
-  //     UserPools pool = tempList[idx];
-  //     pool.recommend = 1;
-  //     userLists.add(pool);
-  //   }
-  //   if (mounted) {
-  //     setState(() {});
-  //   }
-  // }
+  Future<void> requsetChannelData() async {
+    userLists.assignAll(AppDataBase.instance.users);
+    if (userLists.isNotEmpty) {
+      String userId = userLists.first.id;
+      int platform = userLists.first.platform;
+      List<UserPools> result = userLists
+          .where((user) => user.platform == platform)
+          .toList();
+      List<Map<String, dynamic>> labelArr = [];
+      result.forEach((mod) {
+        mod.labels.forEach((label) {
+          Map<String, dynamic> dic = {
+            'angered': label.id,
+            'coachable': label.labelName,
+            'paradisian': label.firstLabelCode,
+            'shunts': label.secondLabelCode,
+          };
+          labelArr.add(dic);
+        });
+      });
+      await HttpManager.postRequest(
+        ApiKey.userPools,
+        platform == 0 ? PlatformType.india : PlatformType.east,
+        para: {
+          'faquir': {'thermopile': labelArr},
+          'insinking': Platform.isIOS ? 'ios' : 'android',
+          'cipherable': userId,
+        },
+        successHandle: (data) {
+          if (data != null && data is List) {
+            List<UserPools> tempUser = <UserPools>[];
+            data.forEach((m) {
+              if (m is Map<String, dynamic>) {
+                UserPools pool = UserPools(
+                  id: m['cipherable'],
+                  account: '',
+                  name: m['jordanite'],
+                  email: '',
+                  picture: m['auxology'],
+                  labels: [],
+                  telegramUrl: '',
+                  bannerPictureUrl: '',
+                  telegramAddress: '',
+                  platform: platform,
+                );
+                tempUser.add(pool);
+              }
+            });
+            InsertChannelData(tempUser);
+          }
+        },
+        failHandle: (refresh, code, msg) {
+          if (refresh) {
+            requsetChannelData();
+          }
+        },
+      );
+    }
+  }
+
+  void InsertChannelData(List<UserPools> list) async {
+    List<UserPools> tempList = <UserPools>[];
+    await AppDataBase.instance.loadUsers();
+    List<UserPools> users = AppDataBase.instance.users;
+
+    for (UserPools item in list) {
+      List<UserPools> exits = users.where((m) => m.id == item.id).toList();
+      if (exits.isEmpty) {
+        tempList.add(item);
+      }
+    }
+
+    if (tempList.isEmpty) {
+      return;
+    }
+
+    if (users.length > 2) {
+      for (int i = 0; i < users.length; i++) {
+        if (i % 2 == 0 && i > 0) {
+          int idx = Random().nextInt(tempList.length);
+          UserPools pool = tempList[idx];
+          pool.recommend = 1;
+          tempList.removeAt(idx);
+          userLists.insert(i, pool);
+        }
+      }
+    } else {
+      int idx = Random().nextInt(tempList.length);
+      UserPools pool = tempList[idx];
+      pool.recommend = 1;
+      userLists.add(pool);
+    }
+    if (mounted) {
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -266,7 +269,7 @@ class _IndexPageState extends State<IndexPage>
                 ),
                 InkWell(
                   onTap: () {
-                    // Get.to(() => MyStationListPage());
+                    Get.to(() => ChannelListPage());
                   },
                   child: Row(
                     children: [
@@ -298,25 +301,25 @@ class _IndexPageState extends State<IndexPage>
                 userLists.length,
                 (index) => GestureDetector(
                   onTap: () {
-                    // eventSource = BackEventSource.channelPage;
-                    // channelSource = ChannelSource.home_channel;
-                    // if (userLists.length > index) {
-                    //   EventManager.instance
-                    //       .enventUpload(EventApi.channellistClick, {
-                    //         'KsAj': userLists[index].recommend == 0
-                    //             ? 'IqYl'
-                    //             : 'oAkJkCeuEa',
-                    //         'pfGl': 'ayiqpkj',
-                    //       });
-                    // }
-                    // Get.to(
-                    //   () => MyStationPage(
-                    //     userId: userLists[index].id,
-                    //     platform: userLists[index].platform == 0
-                    //         ? PlatformType.first
-                    //         : PlatformType.end,
-                    //   ),
-                    // );
+                    eventSource = BackEventSource.channelPage;
+                    channelSource = ChannelSource.home_channel;
+                    if (userLists.length > index) {
+                      EventManager.instance
+                          .enventUpload(EventApi.channellistClick, {
+                            'KsAj': userLists[index].recommend == 0
+                                ? 'IqYl'
+                                : 'oAkJkCeuEa',
+                            'pfGl': 'ayiqpkj',
+                          });
+                    }
+                    Get.to(
+                      () => ChannelPage(
+                        userId: userLists[index].id,
+                        platform: userLists[index].platform == 0
+                            ? PlatformType.india
+                            : PlatformType.east,
+                      ),
+                    );
                   },
                   child: SizedBox(
                     width: 72,

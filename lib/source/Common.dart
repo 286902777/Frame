@@ -3,8 +3,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 
 enum PlatformType {
-  india('werwr'),
-  east('wersxs');
+  india('kidskin'), // cashsnap
+  east('triformous'); //quickearn
 
   final String name;
   const PlatformType(this.name);
@@ -41,18 +41,44 @@ enum PlaySource {
   const PlaySource(this.name);
 }
 
+enum ChannelSource {
+  landpage_avtor('xsjwxX1NXYi'),
+  landpage_recently('bsekIDPmk'),
+  landpage_recommend('sdfEcB'),
+  home_channel('sdfPwQUkzHtZ '),
+  channellist('xsUWvcMm'),
+
+  channelpage_recommend('sfWYhy'),
+  channelpage_avtor('sgSIoGalmZZ');
+
+  final String name;
+  const ChannelSource(this.name);
+}
+
+enum AdmobSource {
+  cold_open('sd'),
+  hot_open('sdfs'),
+  cold_play('sw'),
+  play('taxfZ'),
+  playlist_next('bsx'),
+  playback('sdfa'),
+  play_10('obhZsdHj'),
+  channelpage('MaUasaFIrJ');
+
+  final String name;
+  const AdmobSource(this.name);
+}
+
 PlatformType apiPlatform = PlatformType.india;
-
 BackEventSource eventSource = BackEventSource.landPage;
-
 PlaySource playSource = PlaySource.landpage_hot;
+ChannelSource channelSource = ChannelSource.landpage_avtor;
+AdmobSource eventAdsSource = AdmobSource.cold_open;
 
+String appLinkId = '';
 String AppName = 'Frame';
-
 String appBunldeId = 'com.frame.xsdfa';
-
 bool isFullScreen = false;
-
 String playFileId = '';
 
 Function(int index)? clickTabItem;
@@ -98,5 +124,20 @@ class Common {
     WidgetsFlutterBinding.ensureInitialized().addPostFrameCallback((_) async {
       await AppTrackingTransparency.requestTrackingAuthorization();
     });
+  }
+
+  String countFile(int size) {
+    if (size / 1024 < 1) {
+      return '${size}B';
+    } else if (size / 1024 < 1024) {
+      String fileSize = (size / 1024).toStringAsFixed(2);
+      return '${fileSize}KB';
+    } else if (size / 1024 / 1024 < 1024) {
+      String fileSize = (size / 1024 / 1024).toStringAsFixed(2);
+      return '${fileSize}MB';
+    } else {
+      String fileSize = (size / 1024 / 1024 / 1024).toStringAsFixed(2);
+      return '${fileSize}GB';
+    }
   }
 }

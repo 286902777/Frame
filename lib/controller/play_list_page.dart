@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 import 'package:osmovie/source/AppDataManager.dart';
@@ -7,6 +8,7 @@ import '../../generated/assets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../event/http_manager.dart';
 import '../model/indexModel.dart';
 import '../model/videoModel.dart';
 import '../source/Common.dart';
@@ -92,36 +94,36 @@ class _PlayListPageState extends State<PlayListPage> {
       result.forEach((mod) {
         mod.labels.forEach((label) {
           Map<String, dynamic> dic = {
-            'accept': label.id,
-            'introrse': label.labelName,
-            'prudishly': label.firstLabelCode,
-            'sulphitic': label.secondLabelCode,
+            'angered': label.id,
+            'coachable': label.labelName,
+            'paradisian': label.firstLabelCode,
+            'shunts': label.secondLabelCode,
           };
           labelArr.add(dic);
         });
       });
-      // await ServiceClentManager.postRequest(
-      //   ApiKey.userPools,
-      //   mod.platform == 0 ? PlatformType.first : PlatformType.end,
-      //   para: {
-      //     'chairs': {'sublates': labelArr},
-      //     'morrows': 'ios',
-      //     'wasterful': mod.userId,
-      //   },
-      //   successHandle: (data) async {
-      //     if (data != null && data is List) {
-      //       int idx = Random().nextInt(data.length);
-      //       resultUserId = data[idx]['wasterful'];
-      //       platform = mod.platform;
-      //       _loadUserInfo();
-      //     }
-      //   },
-      //   failHandle: (refresh, code, msg) {
-      //     if (refresh) {
-      //       _getChannel(mod);
-      //     }
-      //   },
-      // );
+      await HttpManager.postRequest(
+        ApiKey.userPools,
+        mod.platform == 0 ? PlatformType.india : PlatformType.east,
+        para: {
+          'faquir': {'thermopile': labelArr},
+          'insinking': Platform.isIOS ? 'ios' : 'android',
+          'cipherable': mod.userId,
+        },
+        successHandle: (data) async {
+          if (data != null && data is List) {
+            int idx = Random().nextInt(data.length);
+            resultUserId = data[idx]['cipherable'];
+            platform = mod.platform;
+            _loadUserInfo();
+          }
+        },
+        failHandle: (refresh, code, msg) {
+          if (refresh) {
+            _getChannel(mod);
+          }
+        },
+      );
     }
   }
 
@@ -133,78 +135,78 @@ class _PlayListPageState extends State<PlayListPage> {
         recommendList.last.movieId,
       ];
     }
-    // await ServiceClentManager.recommendPostRequest(
-    //   ApiKey.playRecommend,
-    //   platform == 0 ? PlatformType.first : PlatformType.end,
-    //   isRequested ? (idsList.isNotEmpty ? true : false) : false,
-    //   para: {
-    //     'boldoine': resultUserId,
-    //     'esm06s3wp9': {'buccheros': idsList},
-    //   },
-    //   successHandle: (data) {
-    //     _refreshController.loadComplete();
-    //     if (data != null && data is Map<String, dynamic>) {
-    //       isRequested = true;
-    //       if (data['madrague'] is List && data['madrague'].length > 0) {
-    //         bool reCom = false;
-    //         for (VideoModel m in dataList) {
-    //           if (m.recommend == 2 ||
-    //               (m.name == 'Recommend' &&
-    //                   m.movieId.isEmpty &&
-    //                   m.recommend == 0)) {
-    //             reCom = true;
-    //           }
-    //         }
-    //         if (recommendList.isEmpty &&
-    //             data['madrague'].length > 0 &&
-    //             reCom == false) {
-    //           dataList.add(VideoModel(name: 'Recommend', recommend: 2));
-    //           recommendList.add(VideoModel(name: 'Recommend', recommend: 2));
-    //         }
-    //         List<VideoModel> tempList = [];
-    //         for (Map<String, dynamic> item in data['madrague']) {
-    //           VideoModel itemModel = VideoModel(
-    //             movieId: item['engraving'],
-    //             name: item['microbody']['rimous'],
-    //             netMovie: 1,
-    //             fileType: item['panorpatae'] ? 0 : 1,
-    //             size: MyCommon.instance.sumFile(item['protaxis']['3sr8zbzlpw']),
-    //             ext: item['protaxis']['0wdbxm9ruw'],
-    //             createDate: item['wride'],
-    //             fileCount: item['premises'],
-    //             recommend: 1,
-    //             thumbnail: item['protaxis']['dupioni'],
-    //             userId: resultUserId ?? '',
-    //             platform: platform,
-    //           );
-    //           tempList.add(itemModel);
-    //         }
-    //         if (recommendList.isNotEmpty &&
-    //             tempList.isNotEmpty &&
-    //             recommendList.last.movieId == tempList.last.movieId) {
-    //           _refreshController.loadNoData();
-    //         } else {
-    //           recommendList.addAll(tempList);
-    //           dataList.addAll(tempList);
-    //         }
-    //       } else {
-    //         _refreshController.loadNoData();
-    //       }
-    //     } else {
-    //       _refreshController.loadNoData();
-    //     }
-    //     if (mounted) {
-    //       setState(() {});
-    //     }
-    //   },
-    //   failHandle: (refresh, code, msg) async {
-    //     if (refresh) {
-    //       _loadUserInfo();
-    //     } else {
-    //       _refreshController.loadFailed();
-    //     }
-    //   },
-    // );
+    await HttpManager.recommendPostRequest(
+      ApiKey.playRecommend,
+      platform == 0 ? PlatformType.india : PlatformType.east,
+      isRequested ? (idsList.isNotEmpty ? true : false) : false,
+      para: {
+        'boldoine': resultUserId,
+        'esm06s3wp9': {'buccheros': idsList},
+      },
+      successHandle: (data) {
+        _refreshController.loadComplete();
+        if (data != null && data is Map<String, dynamic>) {
+          isRequested = true;
+          if (data['madrague'] is List && data['madrague'].length > 0) {
+            bool reCom = false;
+            for (VideoModel m in dataList) {
+              if (m.recommend == 2 ||
+                  (m.name == 'Recommend' &&
+                      m.movieId.isEmpty &&
+                      m.recommend == 0)) {
+                reCom = true;
+              }
+            }
+            if (recommendList.isEmpty &&
+                data['madrague'].length > 0 &&
+                reCom == false) {
+              dataList.add(VideoModel(name: 'Recommend', recommend: 2));
+              recommendList.add(VideoModel(name: 'Recommend', recommend: 2));
+            }
+            List<VideoModel> tempList = [];
+            for (Map<String, dynamic> item in data['madrague']) {
+              VideoModel itemModel = VideoModel(
+                movieId: item['engraving'],
+                name: item['microbody']['rimous'],
+                netMovie: 1,
+                fileType: item['panorpatae'] ? 0 : 1,
+                size: Common.instance.countFile(item['protaxis']['3sr8zbzlpw']),
+                ext: item['protaxis']['0wdbxm9ruw'],
+                createDate: item['wride'],
+                fileCount: item['premises'],
+                recommend: 1,
+                thumbnail: item['protaxis']['dupioni'],
+                userId: resultUserId ?? '',
+                platform: platform,
+              );
+              tempList.add(itemModel);
+            }
+            if (recommendList.isNotEmpty &&
+                tempList.isNotEmpty &&
+                recommendList.last.movieId == tempList.last.movieId) {
+              _refreshController.loadNoData();
+            } else {
+              recommendList.addAll(tempList);
+              dataList.addAll(tempList);
+            }
+          } else {
+            _refreshController.loadNoData();
+          }
+        } else {
+          _refreshController.loadNoData();
+        }
+        if (mounted) {
+          setState(() {});
+        }
+      },
+      failHandle: (refresh, code, msg) async {
+        if (refresh) {
+          _loadUserInfo();
+        } else {
+          _refreshController.loadFailed();
+        }
+      },
+    );
   }
 
   @override
