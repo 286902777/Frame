@@ -69,9 +69,9 @@ PODS:
     - FlutterMacOS
   - screen_brightness_ios (0.1.0):
     - Flutter
-  - SDWebImage (5.21.2):
-    - SDWebImage/Core (= 5.21.2)
-  - SDWebImage/Core (5.21.2)
+  - SDWebImage (5.21.3):
+    - SDWebImage/Core (= 5.21.3)
+  - SDWebImage/Core (5.21.3)
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -165,31 +165,31 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/webview_flutter_wkwebview/darwin"
 
 SPEC CHECKSUMS:
-  app_tracking_transparency: e169b653478da7bb15a6c61209015378ca73e375
-  connectivity_plus: 2a701ffec2c0ae28a48cf7540e279787e77c447d
-  device_info_plus: bf2e3232933866d73fe290f2942f2156cdd10342
+  app_tracking_transparency: 3d84f147f67ca82d3c15355c36b1fa6b66ca7c92
+  connectivity_plus: cb623214f4e1f6ef8fe7403d580fdad517d2f7dd
+  device_info_plus: 21fcca2080fbcd348be798aa36c3e5ed849eefbe
   DKImagePickerController: 946cec48c7873164274ecc4624d19e3da4c1ef3c
   DKPhotoGallery: b3834fecb755ee09a593d7c9e389d8b5d6deed60
-  file_picker: b159e0c068aef54932bb15dc9fd1571818edaf49
+  file_picker: a0560bc09d61de87f12d246fc47d2119e6ef37be
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
-  flutter_keyboard_visibility: 0339d06371254c3eb25eeb90ba8d17dca8f9c069
-  flutter_secure_storage: d33dac7ae2ea08509be337e775f6b59f1ff45f12
-  image_picker_ios: c560581cceedb403a6ff17f2f816d7fea1421fc1
+  flutter_keyboard_visibility: 4625131e43015dbbe759d9b20daaf77e0e3f6619
+  flutter_secure_storage: 1ed9476fba7e7a782b22888f956cce43e2c62f13
+  image_picker_ios: e0ece4aa2a75771a7de3fa735d26d90817041326
   libwebp: 02b23773aedb6ff1fd38cec7a77b81414c6842a8
-  media_kit_libs_ios_video: a5fe24bc7875ccd6378a0978c13185e1344651c1
-  media_kit_video: 5da63f157170e5bf303bf85453b7ef6971218a2e
-  package_info_plus: c0502532a26c7662a62a356cebe2692ec5fe4ec4
-  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
-  screen_brightness_ios: 6a6f7794b67f07c4f1e24f6374b2d8ad367ffb39
-  SDWebImage: 9f177d83116802728e122410fb25ad88f5c7608a
-  shared_preferences_foundation: fcdcbc04712aee1108ac7fda236f363274528f78
-  sqflite_darwin: 5a7236e3b501866c1c9befc6771dfd73ffb8702d
+  media_kit_libs_ios_video: 5a18affdb97d1f5d466dc79988b13eff6c5e2854
+  media_kit_video: 1746e198cb697d1ffb734b1d05ec429d1fcd1474
+  package_info_plus: af8e2ca6888548050f16fa2f1938db7b5a5df499
+  path_provider_foundation: bb55f6dbba17d0dccd6737fe6f7f34fbd0376880
+  screen_brightness_ios: 9953fd7da5bd480f1a93990daeec2eb42d4f3b52
+  SDWebImage: 16309af6d214ba3f77a7c6f6fdda888cb313a50a
+  shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb
+  sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
   SwiftyGif: 706c60cf65fa2bc5ee0313beece843c8eb8194d4
-  url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe
-  video_thumbnail: c4e2a3c539e247d4de13cd545344fd2d26ffafd1
-  volume_controller: 2e3de73d6e7e81a0067310d17fb70f2f86d71ac7
-  wakelock_plus: 76957ab028e12bfa4e66813c99e46637f367fc7e
-  webview_flutter_wkwebview: a4af96a051138e28e29f60101d094683b9f82188
+  url_launcher_ios: 7a95fa5b60cc718a708b8f2966718e93db0cef1b
+  video_thumbnail: b637e0ad5f588ca9945f6e2c927f73a69a661140
+  volume_controller: 3657a1f65bedb98fa41ff7dc5793537919f31b12
+  wakelock_plus: e29112ab3ef0b318e58cfa5c32326458be66b556
+  webview_flutter_wkwebview: 8ebf4fded22593026f7dbff1fbff31ea98573c8d
 
 PODFILE CHECKSUM: 3c63482e143d1b91d2d2560aee9fb04ecc74ac7e
 
