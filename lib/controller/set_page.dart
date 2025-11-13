@@ -47,7 +47,7 @@ class _SetPageState extends State<SetPage>
   void didPushNext() {}
 
   void openEmail() async {
-    String email = 'xowgsgie@ools.help';
+    String email = 'lichengshuo@hktairanxingtra.asia';
     launchUrl(Uri(scheme: 'mailto', path: email));
   }
 
@@ -173,9 +173,9 @@ class _SetPageState extends State<SetPage>
         openEmail();
       // MobileAds.instance.openAdInspector((error) {});
       case 1:
-        Get.to(() => (WebPage(name: '', link: 'https://www.baidu.com/')));
+        Get.to(() => (WebPage(name: '', link: 'https://frameplayvid.com/terms/')));
       default:
-        Get.to(() => (WebPage(name: '', link: 'https://frame.com/privacy/')));
+        Get.to(() => (WebPage(name: '', link: 'https://frameplayvid.com/privacy/')));
     }
   }
 }
